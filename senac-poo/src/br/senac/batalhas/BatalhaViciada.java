@@ -10,11 +10,11 @@ public class BatalhaViciada extends Batalha {
 
 	public Combatente lutar() throws InterruptedException {
 		while(batalhaContinua()) {
-			int ataque = calculcarAtaque();
+			int ataque = Dado.calculcarAtaque();
 			//System.out.println("Será desferido um ataque de " + String.valueOf(ataque) + " pontos em " + inimigo1.getNome());
 			inimigo1.recebeAtaque(ataque);
 			
-			ataque = calculcarAtaque() + 20;
+			ataque = Dado.calculcarAtaque() + 20;
 			//System.out.println("Será desferido um ataque de " + String.valueOf(ataque) + " pontos em " + inimigo2.getNome());
 			inimigo2.recebeAtaque(ataque);
 			

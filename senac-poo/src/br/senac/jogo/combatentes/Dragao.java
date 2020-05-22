@@ -1,5 +1,7 @@
 package br.senac.jogo.combatentes;
 
+import br.senac.batalhas.Arma;
+
 public abstract class Dragao extends Combatente 
 	implements ISerVoador {
 	
@@ -16,5 +18,9 @@ public abstract class Dragao extends Combatente
 		if(!desviaVoador()) {
 			super.recebeAtaque(ataque);
 		}
+	}
+	
+	public void equipaArma(Arma arma) {
+		throw new RuntimeException("Dragao não pode ter arma");
 	}
 }

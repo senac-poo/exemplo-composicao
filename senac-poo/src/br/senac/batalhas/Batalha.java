@@ -10,7 +10,6 @@ public class Batalha {
 	// ** Métodos complexos
 	protected Combatente inimigo1;
 	protected Combatente inimigo2;
-	private Random rand = new Random();
 	
 	public Batalha(Combatente inimigo1, Combatente inimigo2) {
 		this.inimigo1 = inimigo1;
@@ -19,11 +18,11 @@ public class Batalha {
 	
 	public Combatente lutar() throws InterruptedException {
 		while(batalhaContinua()) {
-			int ataque = calculcarAtaque();
+			int dado = Dado.calculcarAtaque();
 			//System.out.println("Será desferido um ataque de " + String.valueOf(ataque) + " pontos em " + inimigo1.getNome());
-			inimigo1.recebeAtaque(ataque);
+			inimigo1.recebeAtaque(dado);
 			
-			ataque = calculcarAtaque();
+			int ataque = Dado.calculcarAtaque();
 			//System.out.println("Será desferido um ataque de " + String.valueOf(ataque) + " pontos em " + inimigo2.getNome());
 			inimigo2.recebeAtaque(ataque);
 			
@@ -31,7 +30,7 @@ public class Batalha {
 			//System.out.println(inimigo1.getNome() + ": " + String.valueOf(inimigo1.getVida()));
 			//System.out.println(inimigo2.getNome() + ": " + String.valueOf(inimigo2.getVida()));
 			
-			Thread.sleep(2000);
+			Thread.sleep(500);
 			//System.out.println("\n");
 		}
 		
@@ -46,9 +45,5 @@ public class Batalha {
 	protected Combatente retonarVencedor() {
 		return (inimigo1.estaVivo() ? inimigo1 : inimigo2);
 	}
-	
-	protected int calculcarAtaque() {
-		return rand.nextInt(10);
-	}
-	
+
 }

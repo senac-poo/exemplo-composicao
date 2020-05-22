@@ -2,6 +2,8 @@ package br.senac.jogo.combatentes;
 
 import java.util.Random;
 
+import br.senac.batalhas.Arma;
+
 public abstract class Combatente {
 	protected Random rand = new Random();
 	protected int vida;
@@ -19,6 +21,10 @@ public abstract class Combatente {
 		this.nome = nome;
 		this.forca = forcaMinima + rand.nextInt(50);
 		this.vida = vidaMinima + rand.nextInt(5);
+	}
+	
+	public void equipaArma(Arma arma) {
+		
 	}
 	
 	public void recebeAtaque(int forca) {
