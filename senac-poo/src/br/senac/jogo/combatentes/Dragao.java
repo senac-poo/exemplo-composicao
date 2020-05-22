@@ -1,6 +1,6 @@
 package br.senac.jogo.combatentes;
 
-import br.senac.batalhas.Arma;
+import br.senac.armas.Arma;
 
 public abstract class Dragao extends Combatente 
 	implements ISerVoador {

@@ -1,7 +1,5 @@
 package br.senac.batalhas;
 
-import java.util.Random;
-
 import br.senac.jogo.combatentes.*;
 
 public class Batalha {
@@ -45,5 +43,4 @@ public class Batalha {
 	protected Combatente retonarVencedor() {
 		return (inimigo1.estaVivo() ? inimigo1 : inimigo2);
 	}
-
 }
